@@ -1,5 +1,6 @@
 const notes = require('express').Router();
-const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const fs = require('fs');
+const { readAndAppend, readFromFile, writeToFile } = require('../helpers/fsUtils');
 const { v4: uuidv4 } = require('uuid'); 
 
 // GET Route for retrieving all the notes
@@ -32,7 +33,19 @@ notes.post('/', (req, res) => {
 });
 
 notes.delete('/:id', (req, res) => {
-    console.log(res);
+    const id = req.params.id;
+    if(id) {
+        fs.readFile("./db/db.json", 'utf8', (err, data) => {
+            if (err) {
+                console.error(err);
+            } else {
+                const parsedData = JSON.parse(data);
+                const filteredData = parsedData.filter(parsedData => parsedData.id !== id)
+                writeToFile("./db/db.json", filteredData);
+            }
+          });
+        
+    }
 });
 
 module.exports = notes;
