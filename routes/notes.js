@@ -46,6 +46,7 @@ notes.delete('/:id', (req, res) => {
           });
         
     }
+    res.json("file deleted");
 });
 
 module.exports = notes;
