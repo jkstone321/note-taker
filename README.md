@@ -36,7 +36,7 @@
 
   If you want to run it locally, open the folder containing everything in a console and run "npm start".
   Alternatively, if you have Nodemon installed globally you can just run "nodemon".
-  After the server is started, navigate to "localhostL3001" in your browser and you should be able to start taking notes.
+  After the server is started, navigate to "localhost:3001" in your browser and you should be able to start taking notes.
   
   ## Credits
   
