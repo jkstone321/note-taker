@@ -24,7 +24,7 @@
 
   ![Screenshot of notes page](./images/opera_TsCMz8W9Bz.png)
   
-  Link to the application
+  Link to the application https://gentle-crag-77895.herokuapp.com/
   
   ## Installation
   
